@@ -24,6 +24,8 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
+
+// validateCred function Uses Luhn Algorithim to validate the credit card numbers and return boolean: true if valid and false if invalid
 const validateCred = (arr)  => {
 
     arr = arr.reverse();
@@ -48,25 +50,29 @@ const validateCred = (arr)  => {
         // console.log(doubleTheDigit.reverse());
 
         let allDigitsTotal = doubleTheDigit.reduce((a,b) => a + b, 0) + checkDigit;
+
         // console.log(allDigitsTotal );
 
-        // totalModulo = allDigitsTotal % 10 ;
-        // console.log(totalModulo);
+        totalModulo = allDigitsTotal % 10 ;
+         console.log(totalModulo);
 
-        // if(totalModulo === 0){
-        //     console.log("Very Valid ")
-        // }else{
-        //     console.log('INVALID, Oloshi haahaha');
-        // }
-        return allDigitsTotal  % 10 === 0;
+        //To LOG a message.
+
+        if(totalModulo === 0){
+            console.log("Very Valid ")
+        }else{
+            console.log('INVALID, Oloshi haahaha');
+        }
+        // return allDigitsTotal  % 10 === 0;
 
 
 }
+//validateCred(valid1);
 
 //I used Variable kiki to test each of my logic before implementing in the "array" function.
 // const kiki = [1,2,3,4,5];
 
-
+//This function checkes for invalid cards in a nested array and returns the card numbers
 const findInvalidCards = (card) => {
     const invalid = [];
 
@@ -85,6 +91,8 @@ console.log(findInvalidCards([valid1, valid2, valid3, valid4, valid5]));// Shoul
 console.log(findInvalidCards([invalid1, invalid2, invalid3, invalid4, invalid5])); // Should print all of the numbers
 
 
+
+//This function checks if the card company is among the major 4(Amex, Visa, Mastercard, Discover) and returns invalid company.
 const idInvalidCardCompanies = (card) => {
     const companies = [];
 
@@ -122,4 +130,49 @@ const idInvalidCardCompanies = (card) => {
 
 }
 
-console.log(idInvalidCardCompanies([invalid1]));
+//console.log(idInvalidCardCompanies([invalid1]));
+
+//Testing with other fake creditCard numbers.
+
+const testCard = [3,4,3,9,9,3,9,5,1,4,2,2,4,9,4];
+
+// console.log(idInvalidCardCompanies([testCard]));
+
+
+//convertToNumbersArray function takes input of string and convert to array of numbers.
+
+const convertToNumbersArray = (str) => {
+
+  let numbersArray = [];
+  let strIndex;
+
+  for(let i = 0; i < str.length; i++){
+    strIndex = parseInt(str[i]);
+    numbersArray.push(strIndex);
+  
+  }
+  
+    console.log(numbersArray);
+    validateCred(numbersArray);
+
+    // 
+
+
+}
+//Used this String to test convertNumberToStringFunction
+let arr = "5399488080392025";
+
+convertToNumbersArray(arr);
+
+//To  convert Invalid card numbers to valid
+
+const convertInvalidNumbersToValid = (card) => {
+
+  
+  if (c) {
+    
+  } else {
+    
+  }
+  
+}
